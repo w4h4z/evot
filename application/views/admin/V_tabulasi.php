@@ -117,7 +117,7 @@
         
         inc = 100/total;
         
-        $("#mulai").click(function() {
+/*        $("#mulai").click(function() {
 			if (ii<total) {
 				getSuara(ii);
 				getSuara2(ii);
@@ -128,11 +128,42 @@
 								};
 							};
 				});
+*/
+    /*    function hitung(){
+        	if (ii<total) {
+				getSuara(ii);
+				getSuara2(ii);
+				ii++;
+				if (ii>=total) {
+					$("#spoil").html('<h1> - </h1>');
+					$("#nomer").text(1);
+								};
+							};
+        }*/
 
-        setInterval(function(){ 
-			   $("#mulai").click();
+         $("#mulai").click(function() {
+         	if (ii<total) {
+				getSuara(ii);
+				getSuara2(ii);
+				ii++;
+					if (ii>=total) {
+						$("#spoil").html('<h1> - </h1>');
+						$("#nomer").text(1);
+					};
+				};
+         	setInterval(function(){ 
+			   if (ii<total) {
+				getSuara(ii);
+				getSuara2(ii);
+				ii++;
+					if (ii>=total) {
+						$("#spoil").html('<h1> - </h1>');
+						$("#nomer").text(1);
+					};
+				};
 			},1000);
-        
+         });
+
 		</script>
        <div class="copy" style="margin-top:0px;">
 		   <p>&copy; Design by HIMA STSN </p>

@@ -175,10 +175,10 @@
         </div>
         <!--------------------------------------------->
     </div>
-	<div class="team" id="about" style="background-image:url(<?php echo base_url(); ?>assets/images/background.png);">
+	<div class="team" id="about" style="background-image:url(<?php echo base_url(); ?>assets/images/background1.png);">
 		<div class="container">
         	
-        	<h3 class="tittle ab" id="title_reg">Senat</h3>
+        	<h3 class="tittle ab" id="title_reg">BEM</h3>
             
                		<?php foreach ($calon as $data): ?>
                			<?php if ($data->no_urut == '0'): ?>
@@ -218,7 +218,7 @@
         </div>
     </div>
     <div class="copy" style="margin-top:0px;">
-		   <!-- <p>&copy; Design by Mohamad Ali Sadikin, Modified by Apriza Noer R</p> -->
+		   <p>&copy; Design by HIMA STSN</p>
 	</div>
 </body>
 </html>

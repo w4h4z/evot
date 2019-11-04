@@ -142,7 +142,7 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function update_tabulasi()
+/*	public function update_tabulasi()
 	{
 		for ($i=1; $i < 33; $i++) { 
 			//$limit = $this->input->post('limit');
@@ -153,13 +153,9 @@ class Admin extends CI_Controller {
 
 			echo $suara->id.'+'.$suara2->suara;
 			echo '<hr>';
-			/*echo $suara->id;
-			echo '<br>';
-			echo $suara2->suara;
-			echo '<hr>';*/
 		}
 	}
-
+*/
 	public function a()
 	{
 		//$this->output->enable_profiler(TRUE);
