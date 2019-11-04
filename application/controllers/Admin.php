@@ -46,7 +46,9 @@ class Admin extends CI_Controller {
 			redirect('admin');
 		}
 
-		$this->load->view('admin/v_tabulasi');
+		$data['surat_suara_num_rows'] = $this->m_admin->get_surat_suara();
+		$data['data_calon'] = $this->m_admin->get_data_calon();
+ 		$this->load->view('admin/v_tabulasi', $data);
 	}
 
 	public function calon()
@@ -138,6 +140,51 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('fail', 'Setup Gagal');
 			redirect('admin/calon');
 		}
+	}
+
+	public function update_tabulasi()
+	{
+		for ($i=1; $i < 33; $i++) { 
+			//$limit = $this->input->post('limit');
+			$suara = $this->m_admin->get_suara($i);
+			$suara2 = $this->m_admin->get_suara_2($i);
+
+			//$this->m_admin->update_suara($suara);
+
+			echo $suara->id.'+'.$suara2->suara;
+			echo '<hr>';
+			/*echo $suara->id;
+			echo '<br>';
+			echo $suara2->suara;
+			echo '<hr>';*/
+		}
+	}
+
+	public function a()
+	{
+		//$this->output->enable_profiler(TRUE);
+		$z = $this->input->post('limit');
+		
+		//for ($i=0; $i < $z; $i++) { 
+			foreach ($this->m_admin->get_suara($z) as $a) {
+				echo $a->id;
+				//echo '<hr>';
+			}
+		//}
+
+	}
+
+	public function b()
+	{
+		//$this->output->enable_profiler(TRUE);
+		$z = $this->input->post('limit');
+		
+		//for ($i=0; $i < $z; $i++) { 
+			foreach ($this->m_admin->get_suara_2($z) as $a) {
+				echo $a->suara;
+				//echo '<hr>';
+			}
+		//}
 
 	}
 

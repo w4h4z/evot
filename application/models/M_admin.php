@@ -89,6 +89,48 @@ class M_admin extends CI_Model {
 			$num = $this->db->select('id')->get('surat_suara')->num_rows();
 		}while($num<370);
 	}
+
+	public function get_surat_suara()
+	{
+		return $this->db->where('status','1')->where('suara !=', '')->get('surat_suara')->num_rows();
+	}
+
+	public function get_data_calon()
+	{
+		return $this->db->get('calon')->result();
+	}
+
+	public function get_suara($limit)
+	{
+		/* $id=get_suara($kon,"id","where status ='1' and suara !='' LIMIT ".$_POST['limit'].",1");
+				update_suara($kon,"open='1'","where id='$id[0]'");
+				$hasil=get_suara($kon,"suara","where suara !='' LIMIT ".$_POST['limit'].",1");
+				echo $id[0].'+'.$hasil[0]; */
+
+		return $this->db->select('id')->where('status', '1')->where('suara !=', '')->limit(1,$limit)->get('surat_suara')->result();
+	}
+
+	public function get_suara_2($limit)
+	{
+		/* $id=get_suara($kon,"id","where status ='1' and suara !='' LIMIT ".$_POST['limit'].",1");
+				update_suara($kon,"open='1'","where id='$id[0]'");
+				$hasil=get_suara($kon,"suara","where suara !='' LIMIT ".$_POST['limit'].",1");
+				echo $id[0].'+'.$hasil[0]; */
+
+		return $this->db->select('suara')->where('status', '1')->where('suara !=', '')->limit(1, $limit)->get('surat_suara')->result();
+	}
+
+	public function update_suara($id)
+	{
+		$object = array('open' => 1 );
+		$this->db->where('id', $id)->update('surat_suara', $object);
+
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
 
 /* End of file M_admin.php */

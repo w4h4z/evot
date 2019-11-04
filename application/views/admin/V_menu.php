@@ -15,7 +15,7 @@
 <link href="<?php echo base_url(); ?>assets/css/registrasi.css" rel='stylesheet' type='text/css' />	
 <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.1.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<!-- <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'> -->
 <!--/script-->
 <script src="<?php echo base_url(); ?>assets/js/modernizr.custom.97074.js"></script>
 
