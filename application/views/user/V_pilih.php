@@ -72,6 +72,11 @@
 		counter = setInterval(timer,1000);
 	}
 	function balik(){
+		$.ajax({
+		  method: "POST",
+		  url: "<?php echo base_url(); ?>index.php/pilih/logout",
+		  data: null
+		});
 		window.location="/evoting";
 	}
 	function send(){
@@ -120,7 +125,7 @@
 <!--<link href="css/custom.css" rel='stylesheet' type='text/css' />-->
 <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.1.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<!-- <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'> -->
 <!--/script-->
 <script src="<?php echo base_url(); ?>assets/js/modernizr.custom.97074.js"></script>
 
@@ -132,7 +137,7 @@
         <div id="bar"></div>
     </div>
 	<div id="popup">
-    <img src='images/loading.gif' alt='Loading...' id="loading" style="display:none;"/>
+    <img src='<?php echo base_url(); ?>assets/images/loading.gif' alt='Loading...' id="loading" style="display:none;"/>
     	<!--Task pop up ----------------------------->
     	<div id="content" class="content">
         	<div id="id" class="id"></div>
@@ -170,7 +175,7 @@
         </div>
         <!--------------------------------------------->
     </div>
-	<div class="team" id="about" style="background-image:url(images/background.png);">
+	<div class="team" id="about" style="background-image:url(<?php echo base_url(); ?>assets/images/background.png);">
 		<div class="container">
         	
         	<h3 class="tittle ab" id="title_reg">Senat</h3>

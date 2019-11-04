@@ -8,7 +8,7 @@ class Pilih extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_pilih');
 		$this->load->model('m_admin');
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 	}
 
 	public function index()
@@ -73,11 +73,6 @@ class Pilih extends CI_Controller {
 		} else {
 			echo 'fail';
 		}
-	}
-
-	public function token()
-	{
-		echo $this->session->userdata('token');
 	}
 
 	public function update_data_suara()
